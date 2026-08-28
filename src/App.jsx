@@ -122,10 +122,10 @@ function Stats() {
   const ref = useRef(null)
   const started = useRef(false)
   const statsData = [
-    { end: 2,   suffix: '',  label: 'Years of Experience' },
-    { end: 6,   suffix: '+', label: 'Projects Built'     },
-    { end: 100, suffix: '+', label: 'REST APIs Designed' },
-    { end: 200, suffix: '+', label: 'Users Served'       },
+    { end: 2,  suffix: '+', label: 'Years of Experience'   },
+    { end: 6,  suffix: '+', label: 'Projects Built'        },
+    { end: 80, suffix: '+', label: 'Tests Written'         },
+    { end: 90, suffix: '%', label: 'API Payload Reduction' },
   ]
   useEffect(() => {
     const el = ref.current
@@ -175,10 +175,11 @@ function Timeline() {
   const ref = useFadeIn()
   const items = [
     { year: '2018 – 2022',         title: "Bachelor's Degree",             org: 'Visvesvaraya Technological University · Belgaum, India', desc: 'B.E. in Electronics and Communication Engineering',                                                                type: 'edu'     },
-    { year: 'Jul 2022 – Aug 2023', title: 'Software Development Engineer',  org: 'Netzwerk.AI · Gulbarga, India',                          desc: 'Built a full Learning Management System from scratch using Spring Boot, Hibernate and MySQL. My first real engineering role out of college.',  type: 'work'    },
+    { year: 'Jul 2022 – Aug 2023', title: 'Software Development Engineer',  org: 'Netzwerk.AI · Gulbarga, India',                          desc: 'My first engineering role out of college. Decomposed high traffic workflows into scalable services and built out CI/CD and observability from scratch.',  type: 'work'    },
     { year: 'Sep 2023',            title: "Started Master's Degree",        org: 'Northeastern University · Boston, MA',                   desc: 'MS in Information Systems',                                                                                         type: 'edu'     },
-    { year: 'Feb – May 2025',      title: 'Software Engineer Co-op',        org: 'IpserLab · Fort Worth, TX',                              desc: "Worked on a live production platform, building microservices with Spring Boot, React and PostgreSQL. Returned to Northeastern to finish my degree after the co-op.",    type: 'work'    },
-    { year: 'Dec 2025',            title: 'Graduated · Open to Work',       org: 'Boston, MA',                                             desc: 'Completed my MS in Information Systems and now actively looking for full time roles in backend, full stack and AI engineering.',  type: 'current' },
+    { year: 'Feb – May 2025',      title: 'Software Engineer Co-op',        org: 'IpserLab · Fort Worth, TX',                              desc: "Worked on a live production platform, building reusable React components and an internal diagnostics dashboard with Spring Boot. Returned to Northeastern to finish my degree after the co-op.",    type: 'work'    },
+    { year: 'Dec 2025',            title: 'Graduated',                      org: 'Northeastern University · Boston, MA',                   desc: 'Completed my MS in Information Systems.',                                                                           type: 'edu'     },
+    { year: 'Feb 2026 – Present',  title: 'Software Engineer',              org: 'IDLMeals · Fort Worth, TX',                              desc: 'Building and optimizing data intensive backend services. Still open to new opportunities in backend, full stack and AI engineering.',  type: 'current' },
   ]
   return (
     <section className='section section-alt' id='journey' ref={ref}>
@@ -229,7 +230,7 @@ function CTABanner() {
         <div className='cta-inner'>
           <div className='cta-text'>
             <h2 className='cta-heading'>Let's build something great together.</h2>
-            <p className='cta-sub'>Available for full time roles, starting immediately.</p>
+            <p className='cta-sub'>Currently a Software Engineer at IDLMeals and open to new full time roles.</p>
           </div>
           <div className='cta-buttons'>
             <a href={personal.resumeUrl} className='btn btn-white' target='_blank' rel='noreferrer' download="Rishab_Shukla_Resume.pdf">
@@ -291,48 +292,55 @@ function HeroCanvas() {
     const ctx = canvas.getContext('2d')
 
     const nodes_data = [
-      { text: 'Python',          isCode: false, tip: 'AI Coding Assistant · ChatBot · Vector-Music' },
-      { text: 'Java',            isCode: false, tip: 'IpserLab · Netzwerk.AI' },
+      { text: 'Python',          isCode: false, tip: 'Coder Buddy · RAG Chatbot · Vector-Music' },
+      { text: 'Java',            isCode: false, tip: 'IDLMeals · IpserLab · Netzwerk.AI' },
       { text: 'JavaScript',      isCode: false, tip: 'NU Haul · Feed Share' },
+      { text: 'TypeScript',      isCode: false, tip: 'IDLMeals' },
       { text: 'React',           isCode: false, tip: 'IpserLab · NU Haul' },
-      { text: 'Spring Boot',     isCode: false, tip: 'IpserLab · Netzwerk.AI · Feed Share' },
+      { text: 'Spring Boot',     isCode: false, tip: 'IDLMeals · IpserLab · Netzwerk.AI' },
       { text: 'Node.js',         isCode: false, tip: 'NU Haul' },
-      { text: 'LangChain',       isCode: false, tip: 'AI Coding Assistant · ChatBot' },
-      { text: 'LangGraph',       isCode: false, tip: 'AI Coding Assistant' },
-      { text: 'Docker',          isCode: false, tip: 'IpserLab' },
-      { text: 'AWS',             isCode: false, tip: 'Feed Share' },
-      { text: 'PostgreSQL',      isCode: false, tip: 'IpserLab' },
+      { text: 'LangChain',       isCode: false, tip: 'RAG Chatbot' },
+      { text: 'LangGraph',       isCode: false, tip: 'Coder Buddy' },
+      { text: 'Docker',          isCode: false, tip: 'Netzwerk.AI · IpserLab' },
+      { text: 'AWS',             isCode: false, tip: 'Netzwerk.AI · Feed Share' },
+      { text: 'PostgreSQL',      isCode: false, tip: 'IDLMeals · IpserLab' },
       { text: 'MongoDB',         isCode: false, tip: 'NU Haul' },
-      { text: 'Groq',            isCode: false, tip: 'AI Coding Assistant' },
-      { text: 'RAG',             isCode: false, tip: 'AI Coding Assistant · ChatBot' },
+      { text: 'Redis',           isCode: false, tip: 'IDLMeals' },
+      { text: 'Kafka',           isCode: false, tip: 'Netzwerk.AI' },
+      { text: 'SQS',             isCode: false, tip: 'Netzwerk.AI' },
+      { text: 'Groq',            isCode: false, tip: 'Coder Buddy' },
+      { text: 'RAG',             isCode: false, tip: 'RAG Chatbot · Coder Buddy' },
       { text: 'Hibernate',       isCode: false, tip: 'Netzwerk.AI · Feed Share' },
       { text: 'Express.js',      isCode: false, tip: 'NU Haul' },
       { text: 'MySQL',           isCode: false, tip: 'Netzwerk.AI · Feed Share' },
-      { text: 'FAISS',           isCode: false, tip: 'ChatBot using LLMs' },
-      { text: 'OpenAI API',      isCode: false, tip: 'ChatBot using LLMs' },
-      { text: 'Angular',         isCode: false, tip: "Master's Coursework" },
-      { text: 'Bootstrap',       isCode: false, tip: "Master's Coursework" },
-      { text: 'jQuery',          isCode: false, tip: "Master's Coursework" },
+      { text: 'FAISS',           isCode: false, tip: 'RAG Chatbot' },
+      { text: 'OpenAI API',      isCode: false, tip: 'RAG Chatbot' },
+      { text: 'Prometheus',      isCode: false, tip: 'Netzwerk.AI' },
+      { text: 'Grafana',         isCode: false, tip: 'Netzwerk.AI' },
+      { text: 'JUnit',           isCode: false, tip: 'IDLMeals' },
+      { text: 'Mockito',         isCode: false, tip: 'IDLMeals' },
+      { text: 'GitHub Actions',  isCode: false, tip: 'Netzwerk.AI' },
       { text: 'Git',             isCode: false, tip: 'All Projects' },
       { text: 'Nginx',           isCode: false, tip: 'Feed Share' },
-      { text: 'SQL',             isCode: false, tip: 'IpserLab · Netzwerk.AI' },
-      { text: 'CI/CD',           isCode: false, tip: 'Feed Share · IpserLab' },
-      { text: 'Embeddings',      isCode: false, tip: 'ChatBot using LLMs' },
-      { text: '@RestController', isCode: true,  tip: 'IpserLab · Netzwerk.AI · Feed Share' },
+      { text: 'SQL',             isCode: false, tip: 'IDLMeals · Netzwerk.AI' },
+      { text: 'CI/CD',           isCode: false, tip: 'Netzwerk.AI · Feed Share' },
+      { text: 'Embeddings',      isCode: false, tip: 'RAG Chatbot' },
+      { text: '@RestController', isCode: true,  tip: 'IDLMeals · IpserLab · Netzwerk.AI' },
       { text: 'useEffect()',     isCode: true,  tip: 'IpserLab · NU Haul' },
-      { text: 'model.invoke()',  isCode: true,  tip: 'AI Coding Assistant' },
+      { text: 'model.invoke()',  isCode: true,  tip: 'Coder Buddy' },
       { text: 'async/await',     isCode: true,  tip: 'NU Haul · Feed Share' },
-      { text: '@Entity',         isCode: true,  tip: 'IpserLab · Feed Share' },
+      { text: '@Entity',         isCode: true,  tip: 'IDLMeals · Feed Share' },
       { text: 'useState()',      isCode: true,  tip: 'IpserLab · NU Haul' },
-      { text: 'docker run',      isCode: true,  tip: 'IpserLab' },
+      { text: 'docker run',      isCode: true,  tip: 'Netzwerk.AI · IpserLab' },
       { text: 'git commit',      isCode: true,  tip: 'All Projects' },
-      { text: 'SELECT * FROM',   isCode: true,  tip: 'IpserLab · Netzwerk.AI' },
-      { text: '@Autowired',      isCode: true,  tip: 'IpserLab · Netzwerk.AI' },
+      { text: 'SELECT * FROM',   isCode: true,  tip: 'IDLMeals · Netzwerk.AI' },
+      { text: '@Autowired',      isCode: true,  tip: 'IDLMeals · Netzwerk.AI' },
+      { text: '@Query',          isCode: true,  tip: 'IDLMeals' },
       { text: 'npm install',     isCode: true,  tip: 'NU Haul · Vector-Music' },
-      { text: 'pip install',     isCode: true,  tip: 'ChatBot · Vector-Music' },
+      { text: 'pip install',     isCode: true,  tip: 'RAG Chatbot · Vector-Music' },
       { text: '.map()',          isCode: true,  tip: 'IpserLab · NU Haul' },
       { text: 'fetch()',         isCode: true,  tip: 'Feed Share · NU Haul' },
-      { text: '@PostMapping',    isCode: true,  tip: 'IpserLab · Netzwerk.AI' },
+      { text: '@PostMapping',    isCode: true,  tip: 'IDLMeals · Netzwerk.AI' },
       { text: 'router.get()',    isCode: true,  tip: 'NU Haul' },
     ]
 
@@ -537,7 +545,7 @@ function About() {
                 <div className='pic-content'>
                   <div className='pic-label'>Status</div>
                   <div className='pic-value pic-status'>Open to Work</div>
-                  <div className='pic-sub'>Available Immediately</div>
+                  <div className='pic-sub'>Currently at IDLMeals</div>
                 </div>
               </div>
             </div>
@@ -734,7 +742,7 @@ function Contact() {
         <div className='contact-layout fade-in'>
           <div className='contact-info'>
             <p className='contact-blurb'>
-              I am currently open to full-time Software Engineering roles in backend, full-stack or AI focused engineering.
+              I am currently a Software Engineer at IDLMeals and open to new full-time roles in backend, full-stack or AI focused engineering.
               Whether you have an opportunity, a project idea, or just want to connect, fill out the form or reach out directly.
             </p>
             <a href={'mailto:' + personal.email} className='contact-email-link'>

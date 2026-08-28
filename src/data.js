@@ -17,10 +17,10 @@ export const personal = {
 
 export const about = {
   bio: [
-    "I'm a Software Engineer with a Master's in Information Systems from Northeastern University, focused on building systems that are not just functional but scalable, reliable, and actually used by people.",
-    "I've worked across backend and full stack development, building production ready applications with Spring Boot and React, and deploying them in real environments. At IpserLab, I contributed to a live platform working on features like authentication, system design improvements, and API driven functionality that directly impacts users.",
-    "What excites me most is the intersection of software engineering and AI. I've built systems that go beyond traditional applications, including multi agent AI workflows and retrieval based chat systems, where the goal isn't just to write code but to create intelligent behavior.",
-    "Right now I'm looking for opportunities where I can build meaningful systems, solve real world problems, and continue growing as an engineer in backend, full stack or AI focused roles.",
+    "I'm a Software Engineer with a Master's in Information Systems from Northeastern University, focused on building backend systems that are not just functional but scalable, reliable, and actually used by people.",
+    "I currently work at IDLMeals, where most of my time goes into the performance and reliability side of a data intensive platform — re-engineering retrieval layers, cutting API payloads and response times, optimizing processing pipelines, and building out test coverage in parts of the codebase that had none.",
+    "Before that I worked across backend and full stack roles at IpserLab and Netzwerk.AI, shipping production React and Spring Boot features, decomposing high traffic workflows into independently scalable services, and setting up CI/CD and observability from scratch so failures could actually be detected and explained.",
+    "What excites me most is the intersection of software engineering and AI. I've built multi agent workflows and retrieval based chat systems where the goal isn't just to write code but to create intelligent behavior. I'm open to opportunities where I can build meaningful systems, solve real world problems, and continue growing as an engineer in backend, full stack or AI focused roles.",
   ],
   educationList: [
     {
@@ -42,18 +42,32 @@ export const about = {
 
 export const experiences = [
   {
+    title: 'Software Engineer',
+    company: 'IDLMeals',
+    location: 'Fort Worth, TX',
+    period: 'Feb 2026 – Present',
+    type: 'Full-time',
+    bullets: [
+      'Re-engineered a data intensive retrieval layer by replacing full entity database queries with JPQL projections, indexed lookups and request driven field selection, reducing API payload sizes by 90% and improving median response time from 780ms to 320ms on frequently accessed endpoints',
+      'Optimized a data matching pipeline with hash based lookups and batch processing, reducing complexity and processing time from 4.2s to 900ms across 10,000+ records',
+      'Implemented 80+ unit and integration tests, increasing code coverage by 35% and uncovering untested legacy code, then partnered with a senior engineer to assess usage and safely remove obsolete functionality',
+      'Leveraged AI assisted tools to analyze errors across unfamiliar areas of the codebase, accelerating root cause identification, bug resolution and documentation workflows by 30%',
+    ],
+    tech: ['Spring Boot', 'JPQL', 'PostgreSQL', 'REST API', 'JUnit', 'Mockito', 'Performance Tuning'],
+  },
+  {
     title: 'Software Engineer Intern',
     company: 'IpserLab',
     location: 'Fort Worth, TX',
     period: 'Feb 2025 – May 2025',
     type: 'Internship',
     bullets: [
-      'Built a scalable microservices platform using Spring Boot, PostgreSQL, and React, improving data retrieval efficiency and cutting UI load times by 40% through smarter client side rendering',
-      'Integrated OAuth2 authentication and role based access control with a clean modular backend design, added password modals and approval pipelines that improved operational efficiency by 30%',
-      'Refactored backend and frontend modules using DTO optimizations and reusable React components, resulting in a 20% improvement in maintainability and noticeably better user responsiveness',
-      'Built an LLM powered recipe transformation system that handles scaling and ingredient substitution using dynamic prompt pipelines with controlled, structured output',
+      'Identified and fixed a mobile animation stutter on the production site by replacing position based animation with GPU accelerated CSS transforms, raising frame rate from 25fps to a steady 60fps',
+      'Automated test data setup with a Spring Boot data loader, cutting manual setup from 25 minutes to a few seconds for the whole team',
+      'Developed 13 reusable React components supporting multiple application workflows, integrating asynchronous APIs and accessible UI patterns while reducing duplicated frontend logic by 30% across 5 application screens',
+      'Architected an internal developer diagnostics dashboard using React and Spring Boot that aggregated service health, recent failures and deployment metadata across 12+ backend services, reducing average issue triage time from 25 minutes to under 10 minutes for the engineering team',
     ],
-    tech: ['Spring Boot', 'PostgreSQL', 'React', 'OAuth2', 'LLM', 'DTO', 'Microservices'],
+    tech: ['React', 'Spring Boot', 'REST API', 'CSS Transforms', 'Accessibility', 'Dashboards'],
   },
   {
     title: 'Software Development Engineer',
@@ -62,34 +76,34 @@ export const experiences = [
     period: 'Jul 2022 – Aug 2023',
     type: 'Full-time',
     bullets: [
-      'Led the full SDLC of a Learning Management System using Spring Boot, JSP/JSTL, Hibernate, and MySQL, integrating 12 web pages with robust user authentication and reducing login issues by 30%',
-      'Built and optimized 100+ RESTful web services, cutting backend response times by 15%, and designed MySQL schemas for 5,000+ records supporting course management for 200+ users',
-      'Worked closely with cross functional teams to resolve 30+ issues through unit testing, debugging, and validation, improving overall application performance by 20%',
-      'Improved platform reliability through structured exception handling, better Hibernate query patterns, and tightened validation workflows',
+      'Decomposed 3 high traffic workflows into independently scalable services, offloading downstream processing through SQS and horizontally scaled workers to isolate failures and increase peak throughput by 2.4 times',
+      'Established CI/CD pipelines with GitHub Actions, Docker and AWS, automating builds, testing, static/dependency/container scanning, artifact publishing and deployment, cutting release time from 40 minutes to 9 minutes and increasing deployment frequency from 2 to 5+ releases per week',
+      'Engineered centralized observability using CloudWatch, Prometheus/Grafana, structured logging, distributed tracing and service level alerts across application and infrastructure layers, reducing mean time to detect production failures from 18 to 5 minutes and improving root cause analysis during incident postmortems',
+      'Owned feature delivery across the full SDLC in a lean engineering team, balancing functionality, reliability, security and deadlines to deliver 10+ production features and platform improvements cross functionally',
     ],
-    tech: ['Spring Boot', 'Hibernate', 'MySQL', 'JSP/JSTL', 'Java', 'REST API'],
+    tech: ['AWS SQS', 'Docker', 'GitHub Actions', 'CI/CD', 'CloudWatch', 'Prometheus', 'Grafana'],
   },
 ];
 
 export const projects = [
   {
-    title: 'AI Powered Coding Assistant',
+    title: 'Coder Buddy',
     category: 'AI',
     emoji: '🤖',
     period: 'Dec 2025 – Jan 2026',
-    description: 'An agentic AI system built with LangGraph that autonomously plans, generates, and refines full stack applications from natural language prompts. Uses a Planner, Architect, and Coder pipeline with tool calling, file system execution, and validation loops for multi file code generation.',
-    tech: ['LangGraph', 'GPT-OSS (Llama 3.x)', 'Groq', 'Python', 'Multi-agent', 'Tool-calling'],
+    description: 'A multi agent AI system built with LangGraph where specialized agents collaborate to turn a natural language prompt into a working, multi file codebase. Uses a Planner, Architect and Coder pipeline with tool calling, file system execution, and validation loops.',
+    tech: ['LangGraph', 'Groq', 'Python', 'Multi-agent', 'Tool-calling'],
     github: null,
     live: null,
     featured: true,
   },
   {
-    title: 'ChatBot using LLMs',
+    title: 'RAG Chatbot',
     category: 'AI',
     emoji: '🧠',
     period: 'Nov 2025 – Dec 2025',
-    description: 'A RAG based chatbot that accepts PDF uploads, extracts and chunks content, generates embeddings, and answers questions using OpenAI and LangChain. Powered by FAISS for fast semantic search with a clean Streamlit UI for real time querying.',
-    tech: ['Python', 'Streamlit', 'LangChain', 'OpenAI API', 'FAISS', 'RAG'],
+    description: 'A document aware AI chatbot that accepts PDF uploads, extracts and chunks content, generates embeddings, and retrieves relevant context to produce grounded, accurate answers. Powered by FAISS for fast semantic search with a clean Streamlit UI for real time querying.',
+    tech: ['Python', 'Streamlit', 'LangChain', 'FAISS', 'RAG', 'Embeddings'],
     github: null,
     live: null,
     featured: true,
@@ -143,23 +157,31 @@ export const projects = [
 export const skills = [
   {
     label: 'Languages',
-    items: ['Python', 'Java (SE/EE)', 'C/C++', 'JavaScript', 'HTML', 'CSS'],
+    items: ['Java (SE/EE)', 'Python', 'JavaScript', 'TypeScript', 'C/C++'],
   },
   {
-    label: 'Frameworks & Libraries',
-    items: ['Spring Boot', 'Hibernate', 'React', 'Node.js', 'Express.js', 'Angular', 'Bootstrap', 'jQuery'],
+    label: 'Backend & APIs',
+    items: ['Spring Boot', 'Spring Security', 'Hibernate', 'Node.js', 'Express.js', 'REST APIs', 'OAuth2', 'JWT'],
   },
   {
-    label: 'Databases',
-    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL'],
+    label: 'Frontend',
+    items: ['React', 'HTML', 'CSS', 'Accessible UI Patterns', 'Responsive Design'],
   },
   {
-    label: 'Tools & Cloud',
-    items: ['Git', 'GitHub', 'Docker', 'AWS EC2', 'AWS S3', 'Nginx', 'CI/CD'],
+    label: 'Databases & Messaging',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Kafka', 'SQS'],
+  },
+  {
+    label: 'Cloud & DevOps',
+    items: ['AWS EC2', 'AWS S3', 'AWS RDS', 'CloudWatch', 'Docker', 'GitHub Actions', 'CI/CD', 'Linux', 'Git'],
+  },
+  {
+    label: 'Testing & Observability',
+    items: ['JUnit', 'Mockito', 'Prometheus', 'Grafana', 'Distributed Tracing', 'Structured Logging'],
   },
   {
     label: 'AI / LLM Stack',
-    items: ['LangChain', 'LangGraph', 'GPT-OSS (Llama 3.x)', 'OpenAI API', 'FAISS', 'RAG', 'Embeddings', 'Groq'],
+    items: ['LangChain', 'LangGraph', 'OpenAI API', 'Groq', 'FAISS', 'RAG', 'Embeddings'],
     highlight: true,
   },
 ];
