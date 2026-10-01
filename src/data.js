@@ -17,10 +17,10 @@ export const personal = {
 
 export const about = {
   bio: [
-    "I'm a Software Engineer with a Master's in Information Systems from Northeastern University, focused on building backend systems that are not just functional but scalable, reliable, and actually used by people.",
-    "I currently work at IDLMeals, where most of my time goes into the performance and reliability side of a data intensive platform — re-engineering retrieval layers, cutting API payloads and response times, optimizing processing pipelines, and building out test coverage in parts of the codebase that had none.",
-    "Before that I worked across backend and full stack roles at IpserLab and Netzwerk.AI, shipping production React and Spring Boot features, decomposing high traffic workflows into independently scalable services, and setting up CI/CD and observability from scratch so failures could actually be detected and explained.",
-    "What excites me most is the intersection of software engineering and AI. I've built multi agent workflows and retrieval based chat systems where the goal isn't just to write code but to create intelligent behavior. I'm open to opportunities where I can build meaningful systems, solve real world problems, and continue growing as an engineer in backend, full stack or AI focused roles.",
+    "I'm an AI Engineer with a backend engineering background and a Master's in Information Systems from Northeastern University. I build LLM systems that aren't just impressive in a demo but scalable, reliable, and actually used by people.",
+    "I currently work at IDLMeals, where I build MCP tool servers, RAG pipelines and agent workflows wired into deterministic Spring Boot services that do the actual deciding. Most of the interesting work lives in the seams — schema validation, restricted tool execution, fallback handling, and keeping retrieval fast over hundreds of thousands of embedded chunks.",
+    "Before that I worked across AI and backend roles at IpserLab and Netzwerk.AI, integrating LLM powered features into production applications and building Python NLP and semantic retrieval pipelines over large unstructured document sets, along with the Java and Spring Boot services sitting behind them.",
+    "The backend half still matters to me — Kafka, Kubernetes, CI/CD and the unglamorous reliability work are what let AI systems survive contact with production. I'm open to opportunities where I can build meaningful AI systems, solve real world problems, and continue growing as an engineer.",
   ],
   educationList: [
     {
@@ -44,16 +44,16 @@ export const experiences = [
   {
     title: 'Software Engineer',
     company: 'IDLMeals',
-    location: 'Fort Worth, TX',
+    location: 'Fort Worth, TX (Remote)',
     period: 'Feb 2026 – Present',
     type: 'Full-time',
     bullets: [
-      'Re-engineered a data intensive retrieval layer by replacing full entity database queries with JPQL projections, indexed lookups and request driven field selection, reducing API payload sizes by 90% and improving median response time from 780ms to 320ms on frequently accessed endpoints',
-      'Optimized a data matching pipeline with hash based lookups and batch processing, reducing complexity and processing time from 4.2s to 900ms across 10,000+ records',
-      'Implemented 80+ unit and integration tests, increasing code coverage by 35% and uncovering untested legacy code, then partnered with a senior engineer to assess usage and safely remove obsolete functionality',
-      'Leveraged AI assisted tools to analyze errors across unfamiliar areas of the codebase, accelerating root cause identification, bug resolution and documentation workflows by 30%',
+      'Engineered MCP servers exposing 14 internal recipe and ingredient tools to AI agents over JSON-RPC 2.0, with allow listed tool scopes and permission boundaries governing backend operations',
+      'Built production RAG workflows in Python with embeddings and vector search over 38K recipes and 9K ingredient records (~410K embedded chunks), enabling semantic retrieval before LLM inference',
+      'Designed 7 AI assisted workflows bridging tool calling and RAG with deterministic Spring Boot services, enforcing Pydantic schema validation, restricted tool execution and fallback handling',
+      'Optimized a data intensive retrieval layer using JPQL projections, indexed lookups and request driven field selection, reducing API payload size by 90% and improving median response time from 780ms to 320ms',
     ],
-    tech: ['Spring Boot', 'JPQL', 'PostgreSQL', 'REST API', 'JUnit', 'Mockito', 'Performance Tuning'],
+    tech: ['MCP', 'JSON-RPC 2.0', 'RAG', 'Vector Search', 'Python', 'Spring Boot', 'Pydantic', 'JPQL'],
   },
   {
     title: 'Software Engineer Intern',
@@ -62,12 +62,12 @@ export const experiences = [
     period: 'Feb 2025 – May 2025',
     type: 'Internship',
     bullets: [
-      'Identified and fixed a mobile animation stutter on the production site by replacing position based animation with GPU accelerated CSS transforms, raising frame rate from 25fps to a steady 60fps',
-      'Automated test data setup with a Spring Boot data loader, cutting manual setup from 25 minutes to a few seconds for the whole team',
-      'Developed 13 reusable React components supporting multiple application workflows, integrating asynchronous APIs and accessible UI patterns while reducing duplicated frontend logic by 30% across 5 application screens',
-      'Architected an internal developer diagnostics dashboard using React and Spring Boot that aggregated service health, recent failures and deployment metadata across 12+ backend services, reducing average issue triage time from 25 minutes to under 10 minutes for the engineering team',
+      'Integrated an LLM powered feature into an existing application using Python inference services and REST APIs, handling input preprocessing, context assembly and model response parsing across 4 application workflows',
+      'Implemented prompt templates, structured outputs and response validation, evaluating against a 180 case input set and raising valid structured responses from 82% to 97%',
+      'Identified and fixed a mobile animation stutter on the production site by replacing position based animation with GPU accelerated CSS transforms, raising frame rate from 24fps to a steady 60fps',
+      'Created 13 reusable React components integrating asynchronous APIs and accessible UI patterns, removing roughly 600 lines of duplicated frontend logic across 5 application screens',
     ],
-    tech: ['React', 'Spring Boot', 'REST API', 'CSS Transforms', 'Accessibility', 'Dashboards'],
+    tech: ['Python', 'LLM', 'Prompt Engineering', 'Structured Outputs', 'REST API', 'React', 'Accessibility'],
   },
   {
     title: 'Software Development Engineer',
@@ -76,12 +76,13 @@ export const experiences = [
     period: 'Jul 2022 – Aug 2023',
     type: 'Full-time',
     bullets: [
-      'Decomposed 3 high traffic workflows into independently scalable services, offloading downstream processing through SQS and horizontally scaled workers to isolate failures and increase peak throughput by 2.4 times',
-      'Established CI/CD pipelines with GitHub Actions, Docker and AWS, automating builds, testing, static/dependency/container scanning, artifact publishing and deployment, cutting release time from 40 minutes to 9 minutes and increasing deployment frequency from 2 to 5+ releases per week',
-      'Engineered centralized observability using CloudWatch, Prometheus/Grafana, structured logging, distributed tracing and service level alerts across application and infrastructure layers, reducing mean time to detect production failures from 18 to 5 minutes and improving root cause analysis during incident postmortems',
-      'Owned feature delivery across the full SDLC in a lean engineering team, balancing functionality, reliability, security and deadlines to deliver 10+ production features and platform improvements cross functionally',
+      'Developed Python NLP pipelines to preprocess, clean and segment ~340K unstructured documents into 2.8M searchable text chunks, supporting large scale semantic search across learning and application content',
+      'Programmed semantic retrieval services by batching embedding generation at ~1.2K chunks/min into a 6GB vector index, using similarity search and metadata filtering to retrieve relevant content at scale',
+      'Integrated Python based AI retrieval services with Java and Spring Boot REST APIs across 17 production endpoints, implementing authentication, validation and backend access controls for application workflows',
+      'Decomposed 3 high traffic workflows into independently scalable services, offloading downstream processing through Kafka and horizontally scaled Kubernetes workers to isolate failures and increase peak throughput by 2.4 times',
+      'Established CI/CD pipelines with Azure DevOps, Docker and Azure, automating builds, testing, static/dependency/container scanning, artifact publishing and deployment, cutting release time from 37 minutes to 9 minutes and raising deployment frequency from 2 to 6 releases per week',
     ],
-    tech: ['AWS SQS', 'Docker', 'GitHub Actions', 'CI/CD', 'CloudWatch', 'Prometheus', 'Grafana'],
+    tech: ['Python', 'NLP', 'Embeddings', 'Vector Search', 'Kafka', 'Kubernetes', 'Azure DevOps', 'Spring Boot'],
   },
 ];
 
