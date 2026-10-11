@@ -17,10 +17,10 @@ export const personal = {
 
 export const about = {
   bio: [
-    "I'm an AI Engineer with a backend engineering background and a Master's in Information Systems from Northeastern University. I build LLM systems that aren't just impressive in a demo but scalable, reliable, and actually used by people.",
-    "I currently work at IDLMeals, where I build MCP tool servers, RAG pipelines and agent workflows wired into deterministic Spring Boot services that do the actual deciding. Most of the interesting work lives in the seams — schema validation, restricted tool execution, fallback handling, and keeping retrieval fast over hundreds of thousands of embedded chunks.",
-    "Before that I worked across AI and backend roles at IpserLab and Netzwerk.AI, integrating LLM powered features into production applications and building Python NLP and semantic retrieval pipelines over large unstructured document sets, along with the Java and Spring Boot services sitting behind them.",
-    "The backend half still matters to me — Kafka, Kubernetes, CI/CD and the unglamorous reliability work are what let AI systems survive contact with production. I'm open to opportunities where I can build meaningful AI systems, solve real world problems, and continue growing as an engineer.",
+    "I'm a Software Developer with a Master's in Information Systems from Northeastern University, focused on building backend and full stack systems that aren't just functional but scalable, reliable, and actually used by people.",
+    "I currently work at IDLMeals, where I replaced polling with Kafka driven WebSocket updates, tracked down a race condition in a critical claim flow before real time push could amplify it, and took test coverage on that migration from 61% to 90%. A lot of the work is performance — moving expensive computation off the main thread so interactions stay fast on large datasets.",
+    "Before that I worked across backend and full stack roles at IpserLab and Netzwerk.AI, building internal React and Spring Boot tooling, decomposing high traffic workflows into independently scalable services with Kafka and Kubernetes, and setting up CI/CD and observability so failures could actually be detected and explained.",
+    "Alongside the day job I build with LLMs — multi agent coding workflows and retrieval based chat systems — which keeps me close to where the tooling is heading. I'm open to opportunities where I can build meaningful systems, solve real world problems, and continue growing as an engineer.",
   ],
   educationList: [
     {
@@ -42,32 +42,32 @@ export const about = {
 
 export const experiences = [
   {
-    title: 'Software Engineer',
+    title: 'Software Developer',
     company: 'IDLMeals',
     location: 'Fort Worth, TX (Remote)',
     period: 'Feb 2026 – Present',
     type: 'Full-time',
     bullets: [
-      'Engineered MCP servers exposing 14 internal recipe and ingredient tools to AI agents over JSON-RPC 2.0, with allow listed tool scopes and permission boundaries governing backend operations',
-      'Built production RAG workflows in Python with embeddings and vector search over 38K recipes and 9K ingredient records (~410K embedded chunks), enabling semantic retrieval before LLM inference',
-      'Designed 7 AI assisted workflows bridging tool calling and RAG with deterministic Spring Boot services, enforcing Pydantic schema validation, restricted tool execution and fallback handling',
-      'Optimized a data intensive retrieval layer using JPQL projections, indexed lookups and request driven field selection, reducing API payload size by 90% and improving median response time from 780ms to 320ms',
+      'Designed Spring Boot Kafka consumers that push backend state changes to React clients over WebSockets, replacing polling and cutting API requests by 80% and update latency from 3s to 70ms',
+      'Troubleshot a pre-existing race condition in the claim flow that real time push would amplify, diagnosed the root cause, fixed it with an atomic conditional update, and documented the fix',
+      'Wrote 80+ JUnit/Mockito tests for the WebSocket migration, raising code coverage from 61% to 90%, then confirmed with access logs that no clients still used the legacy endpoints before removing obsolete code',
+      'Evaluated and adopted Web Workers and virtualized rendering to re-engineer a data intensive React/JavaScript workflow, moving expensive computation off the main thread and cutting interaction latency from 420ms to 110ms on datasets of 50K+ records',
     ],
-    tech: ['MCP', 'JSON-RPC 2.0', 'RAG', 'Vector Search', 'Python', 'Spring Boot', 'Pydantic', 'JPQL'],
+    tech: ['Spring Boot', 'Kafka', 'WebSockets', 'React', 'JUnit', 'Mockito', 'Web Workers'],
   },
   {
-    title: 'Software Engineer Intern',
+    title: 'Software Developer Intern (Co-op)',
     company: 'IpserLab',
     location: 'Fort Worth, TX',
     period: 'Feb 2025 – May 2025',
-    type: 'Internship',
+    type: 'Co-op',
     bullets: [
-      'Integrated an LLM powered feature into an existing application using Python inference services and REST APIs, handling input preprocessing, context assembly and model response parsing across 4 application workflows',
-      'Implemented prompt templates, structured outputs and response validation, evaluating against a 180 case input set and raising valid structured responses from 82% to 97%',
-      'Identified and fixed a mobile animation stutter on the production site by replacing position based animation with GPU accelerated CSS transforms, raising frame rate from 24fps to a steady 60fps',
-      'Created 13 reusable React components integrating asynchronous APIs and accessible UI patterns, removing roughly 600 lines of duplicated frontend logic across 5 application screens',
+      'Analyzed user needs with engineers as end users, then prototyped and built an internal diagnostics dashboard in React and Java/Spring Boot aggregating service health, failures and deployment metadata across 12+ services, reducing troubleshooting time from 20 to under 10 minutes',
+      'Automated test data setup with a Java/Spring Boot data loader, cutting manual setup from 10 minutes to a few seconds for the whole team',
+      'Identified and fixed a mobile animation stutter on the production site by replacing position based animation with GPU accelerated CSS transforms, raising frame rate from 25fps to a steady 60fps',
+      'Developed 13 reusable React components and centralized API calls in custom hooks across 5 screens, cutting screen code by 18%',
     ],
-    tech: ['Python', 'LLM', 'Prompt Engineering', 'Structured Outputs', 'REST API', 'React', 'Accessibility'],
+    tech: ['React', 'Java', 'Spring Boot', 'Custom Hooks', 'CSS Transforms', 'Dashboards'],
   },
   {
     title: 'Software Development Engineer',
@@ -76,13 +76,12 @@ export const experiences = [
     period: 'Jul 2022 – Aug 2023',
     type: 'Full-time',
     bullets: [
-      'Developed Python NLP pipelines to preprocess, clean and segment ~340K unstructured documents into 2.8M searchable text chunks, supporting large scale semantic search across learning and application content',
-      'Programmed semantic retrieval services by batching embedding generation at ~1.2K chunks/min into a 6GB vector index, using similarity search and metadata filtering to retrieve relevant content at scale',
-      'Integrated Python based AI retrieval services with Java and Spring Boot REST APIs across 17 production endpoints, implementing authentication, validation and backend access controls for application workflows',
-      'Decomposed 3 high traffic workflows into independently scalable services, offloading downstream processing through Kafka and horizontally scaled Kubernetes workers to isolate failures and increase peak throughput by 2.4 times',
-      'Established CI/CD pipelines with Azure DevOps, Docker and Azure, automating builds, testing, static/dependency/container scanning, artifact publishing and deployment, cutting release time from 37 minutes to 9 minutes and raising deployment frequency from 2 to 6 releases per week',
+      'Decomposed 3 high traffic Java/Spring Boot workflows into independently scalable services, offloading downstream processing through Kafka and horizontally scaled Kubernetes workers to isolate failures and increase peak throughput by 2.4×',
+      'Established CI/CD pipelines with Azure DevOps, Docker and Azure, automating builds, testing, static/dependency/container scanning, artifact publishing and deployment, cutting release time from 40 minutes to 9 minutes and increasing deployment frequency from 2 to 5+ releases per week',
+      'Engineered centralized observability using Azure Monitor, Application Insights, structured logging and distributed tracing, reducing mean time to detect production failures from 18 to 5 minutes and improving root cause analysis in incident postmortems',
+      'Partnered with product and QA to deliver 6 production features across the full SDLC, from requirements analysis and technical specifications to design reviews, testing and release, translating business requirements into working software and flagging delivery risks early',
     ],
-    tech: ['Python', 'NLP', 'Embeddings', 'Vector Search', 'Kafka', 'Kubernetes', 'Azure DevOps', 'Spring Boot'],
+    tech: ['Java', 'Spring Boot', 'Kafka', 'Kubernetes', 'Azure DevOps', 'Docker', 'Azure Monitor'],
   },
 ];
 
@@ -125,8 +124,8 @@ export const projects = [
     category: 'Full Stack',
     emoji: '🍱',
     period: 'Nov 2025 – Dec 2025',
-    description: 'A web app for sharing surplus food from campus events with real time feed updates, location based data, and full user account management. Deployed on AWS using EC2, S3, cloud hosted MySQL, Nginx for HTTPS, and a CI/CD workflow.',
-    tech: ['Spring Boot', 'Hibernate', 'MySQL', 'AWS EC2', 'S3', 'Ajax', 'Nginx', 'CI/CD'],
+    description: 'A full stack platform built with Java, Spring Boot, Hibernate and MySQL that lets Northeastern students post and discover leftover food from campus events through a live, AJAX updated feed. Deployed on AWS using EC2, S3, cloud hosted MySQL and Nginx for HTTPS.',
+    tech: ['Java', 'Spring Boot', 'Hibernate', 'MySQL', 'AJAX', 'AWS EC2', 'Nginx'],
     github: null,
     live: null,
     featured: false,
@@ -138,6 +137,17 @@ export const projects = [
     period: 'Sep 2025 – Oct 2025',
     description: 'A full stack MERN platform for Northeastern University students to buy, sell, and rent household goods. Includes advanced search filters, email verification, and a secure login system.',
     tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'REST API'],
+    github: null,
+    live: null,
+    featured: false,
+  },
+  {
+    title: 'Inventory Management App',
+    category: 'Full Stack',
+    emoji: '📦',
+    period: '2026',
+    description: 'An inventory CRUD application built with ASP.NET Core, using Dapper for lightweight data access and AutoMapper for object mapping, paired with a jQuery and AJAX driven frontend for creating, updating and tracking stock records without full page reloads.',
+    tech: ['ASP.NET Core', 'C#', 'Dapper', 'AutoMapper', 'JavaScript', 'jQuery'],
     github: null,
     live: null,
     featured: false,
@@ -158,27 +168,27 @@ export const projects = [
 export const skills = [
   {
     label: 'Languages',
-    items: ['Java (SE/EE)', 'Python', 'JavaScript', 'TypeScript', 'C/C++'],
-  },
-  {
-    label: 'Backend & APIs',
-    items: ['Spring Boot', 'Spring Security', 'Hibernate', 'Node.js', 'Express.js', 'REST APIs', 'OAuth2', 'JWT'],
+    items: ['Java 17', 'Jakarta EE', 'Python', 'C#', 'JavaScript'],
   },
   {
     label: 'Frontend',
-    items: ['React', 'HTML', 'CSS', 'Accessible UI Patterns', 'Responsive Design'],
+    items: ['React', 'React Native', 'jQuery', 'HTML/CSS'],
+  },
+  {
+    label: 'Backend & APIs',
+    items: ['Spring Boot', 'Spring Security', 'Hibernate', 'Spring Data JPA', 'Maven/Gradle', 'REST APIs', 'JWT'],
   },
   {
     label: 'Databases & Messaging',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Kafka', 'SQS'],
+    items: ['SQL', 'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Kafka', 'WebSockets'],
   },
   {
     label: 'Cloud & DevOps',
-    items: ['AWS EC2', 'AWS S3', 'AWS RDS', 'CloudWatch', 'Docker', 'GitHub Actions', 'CI/CD', 'Linux', 'Git'],
+    items: ['Azure', 'Azure DevOps', 'Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Git', 'GitHub Actions'],
   },
   {
-    label: 'Testing & Observability',
-    items: ['JUnit', 'Mockito', 'Prometheus', 'Grafana', 'Distributed Tracing', 'Structured Logging'],
+    label: 'Practices',
+    items: ['Agile', 'Object-Oriented Programming', 'Unit/Integration Testing', 'Debugging & Troubleshooting'],
   },
   {
     label: 'AI / LLM Stack',
